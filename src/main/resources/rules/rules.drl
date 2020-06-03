@@ -1,0 +1,22 @@
+package rules
+
+import com.example.model.Electronic
+
+rule "Offer for SmartPhone"
+	when 
+		electronicObject: Electronic(type=="smartphone" && price>50000)
+	then
+		electronicObject.setDiscount(20);
+	end
+rule "Offer for Laptop"
+	when 
+		electronicObject: Electronic(type=="laptop" && price>70000)
+	then
+		electronicObject.setDiscount(30);
+	end
+rule "Offer for Tablet"
+	when
+		electronicObject: Electronic(type=="tablet" && price>10000)
+	then
+		electronicObject.setDiscount(15);
+	end
